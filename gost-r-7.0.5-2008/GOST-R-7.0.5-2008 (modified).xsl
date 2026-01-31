@@ -34,10 +34,10 @@
   <!-- Variable containing all necessary data for a certain style of bibliography. -->
   <xsl:variable name="data">
     <general>
-      <stylename>ГОСТ Р 7.0.5-2008 (сортировка по порядку включения)</stylename>
-      <version>2012.03.05</version>
+      <stylename>ГОСТ Р 7.0.5-2008? (модификация 2026) (сортировка по порядку включения)</stylename>
+      <version>2026.01.26</version>
       <author>Андрей Рогожников (rogozhnikov.andrey@gmail.com)</author>
-      <description>Реализация стиля библиографии, определяемого ГОСТом Р 7.0.5-2008</description>
+      <description>Реализация стиля библиографии, определяемого ГОСТом Р 7.0.5-2008? (модификация 2026)</description>
       <URL>http://bibword.codeplex.com/updateStyle?id=123</URL>
       <comments>
         This is version 2.8 of the BibWord stylesheet.
@@ -79,16 +79,13 @@
         <b:ImportantField>b:Pages</b:ImportantField>
         <b:ImportantField>b:Month</b:ImportantField>
         <b:ImportantField>b:Year</b:ImportantField>
+        <b:ImportantField>b:URL</b:ImportantField>
+        <b:ImportantField>b:DayAccessed</b:ImportantField>
+        <b:ImportantField>b:MonthAccessed</b:ImportantField>
+        <b:ImportantField>b:YearAccessed</b:ImportantField>
       </source>
       <source type="ArticleInAPeriodical">
-        <b:ImportantField>b:Author/b:Author/b:NameList</b:ImportantField>
         <b:ImportantField>b:Title</b:ImportantField>
-        <b:ImportantField>b:PeriodicalTitle</b:ImportantField>
-        <b:ImportantField>b:Volume</b:ImportantField>
-        <b:ImportantField>b:Issue</b:ImportantField>
-        <b:ImportantField>b:Pages</b:ImportantField>
-        <b:ImportantField>b:Month</b:ImportantField>
-        <b:ImportantField>b:Year</b:ImportantField>
       </source>
       <source type="ConferenceProceedings">
         <b:ImportantField>b:Author/b:Author/b:NameList</b:ImportantField>
@@ -114,21 +111,15 @@
       <source type="InternetSite">
         <b:ImportantField>b:Title</b:ImportantField>
         <b:ImportantField>b:InternetSiteTitle</b:ImportantField>
-        <b:ImportantField>b:YearAccessed</b:ImportantField>
-        <b:ImportantField>b:MonthAccessed</b:ImportantField>
         <b:ImportantField>b:DayAccessed</b:ImportantField>
+        <b:ImportantField>b:MonthAccessed</b:ImportantField>
+        <b:ImportantField>b:YearAccessed</b:ImportantField>
         <b:ImportantField>b:URL</b:ImportantField>
-		<b:ImportantField>b:Year</b:ImportantField>
+	<b:ImportantField>b:Year</b:ImportantField>
       </source>
       <source type="DocumentFromInternetSite">
-        <b:ImportantField>b:Author/b:Author/b:NameList</b:ImportantField>
         <b:ImportantField>b:Title</b:ImportantField>
         <b:ImportantField>b:InternetSiteTitle</b:ImportantField>
-        <b:ImportantField>b:YearAccessed</b:ImportantField>
-        <b:ImportantField>b:MonthAccessed</b:ImportantField>
-        <b:ImportantField>b:DayAccessed</b:ImportantField>
-        <b:ImportantField>b:URL</b:ImportantField>
-		<b:ImportantField>b:Year</b:ImportantField>
       </source>
       <source type="ElectronicSource">
         <b:ImportantField>b:Author/b:Author/b:NameList</b:ImportantField>
@@ -233,7 +224,7 @@
           <format lcid="">%RefOrder%</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">[[%Tag%]]</format>
           <format lcid="1049">[[%Tag%]]</format>
@@ -246,7 +237,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233|Editor:333%.}{ %Title|ShortTitle%.{ %Edition:o% ed.}{ Vol %Volume%.}}{ %City%{ (%StateProvince%)}{: %Publisher%{, %Year%}}.}{ %Publisher%{, %Year%}.}{ %Year%.}{ %Pages% pp.}</format>
           <format lcid="1049">{%Author:249|Editor:349%.}{ %Title|ShortTitle%.{ %Edition%-е изд.}{ Т. %Volume%.}}{ %City%{ (%StateProvince%)}{: %Publisher%{, %Year%}}.}{ %Publisher%{, %Year%}.}{ %Year%.}{ %Pages% с.}</format>
@@ -259,7 +250,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233|Editor:333%.}{ %Title|ShortTitle%{. %Edition:o% ed.}{. Vol %Volume%.}{ // In: %BookTitle%}{ / Ed. by %BookAuthor:233%}.}{ %City%{ (%StateProvince%)}{: %Publisher%{, %Year%}}.}{ %Publisher%{, %Year%}.}{ %Year%.}{ %Pages:P. :pp. %}.</format>
           <format lcid="1049">{%Author:249|Editor:349%.}{ %Title|ShortTitle%{. %Edition%-е изд.}{. Т. %Volume%.}{ // В кн.: %BookTitle%}{ / ред. %BookAuthor:249%}.}{ %City%{ (%StateProvince%)}{: %Publisher%{, %Year%}}.}{ %Publisher%{, %Year%}.}{ %Year%.}{ С. %Pages%}.</format>
@@ -272,10 +263,10 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
-          <format lcid="1033">{%Author:233%. }{%Title%}{ // %JournalName%}{, Vol. %Volume%}{, No. %Issue%}{,{ %Month:s%} %Year%}{ . %Pages:P. :pp. %}.</format>
-          <format lcid="1049">{%Author:249%. }{%Title%}{ // %JournalName%}{, Т. %Volume%}{, № %Issue%}{,{ %Month:s%} %Year%}{ . С. %Pages%}.</format>
+          <format lcid="1033">{%Author:233%. }{%Title%}{ // %JournalName%}.{ – { %Month:s%} %Year%.}{ – T. %Volume%.}{ № %Issue%.}{ – С. %Pages%}{ URL: &lt;u&gt;&lt;font color="#0563c1"&gt;%URL:0s%&lt;/font&gt;&lt;/u&gt;}{ (Дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}.</format>
+          <format lcid="1049">{%Author:249%. }{%Title%}{ // %JournalName%}.{ – { %Month:s%} %Year%.}{ – Т. %Volume%.}{ № %Issue%.}{ – С. %Pages%}{ URL: &lt;u&gt;&lt;font color="#0563c1"&gt;%URL:0s%&lt;/font&gt;&lt;/u&gt;}.</format>
         </column>
         <sortkey></sortkey>
       </source>
@@ -286,7 +277,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233%.}{ %Title%}{ // %PeriodicalTitle%.}{{ %Month:s%} %Year%.}{ Vol. %Volume%.}{ No. %Issue%.}{ %Pages:P. :pp. %.}</format>
           <format lcid="1049">{%Author:249%.}{ %Title%}{ // %PeriodicalTitle%.}{{ %Month:s%} %Year%.}{ Т. %Volume%.}{ № %Issue%.}{ С. %Pages%.}</format>
@@ -300,7 +291,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233%.}{ %Title%}{ // %ConferenceName%.}{ %City|StateProvince|CountryRegion%.}{ %StateProvince|CountryRegion%.}{ %CountryRegion%.}{{ %Month:s%} %Year%.}{ Vol. %Volume%.}{ %Pages:P. :pp. %.}.</format>
           <format lcid="1049">{%Author:249%.}{ %Title%}{ // %ConferenceName%.}{ %City|StateProvince|CountryRegion%.}{ %StateProvince|CountryRegion%.}{ %CountryRegion%.}{{ %Month:s%} %Year%.}{ Т. %Volume%.}{ С. %Pages%.}.</format>
@@ -314,7 +305,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233%. }{%Title%, }{%Department%, }{%Institution%, }{%City|StateProvince|CountryRegion%, }{%StateProvince|CountryRegion%, }{%CountryRegion%, }{%ThesisType% }{%StandardNumber%, }{{%Month:s%{ %Day%,}} %Year%}.{ [Online]. %URL:l%}{ %Pages% pp.}</format>
           <format lcid="1049">{%Author:249%. }{%Title%, }{%Department%, }{%Institution%, }{%City|StateProvince|CountryRegion%, }{%StateProvince|CountryRegion%, }{%CountryRegion%, }{%ThesisType% }{%StandardNumber%, }{{%Month:s%{ %Day%,}} %Year%}.{ [Online]. %URL:l%}{ %Pages% с.}</format>
@@ -330,8 +321,8 @@
         <column id="2">
           <halign>left</halign>
           <valign>top</valign>
-          <format lcid="1033">{%Author:249%.}{ %Title% [Электронный ресурс]}{ // %InternetSiteTitle%: [сайт].}{ [%Year%].}{ URL: %URL:0s%}{ (дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
-          <format lcid="1049">{%Author:249%.}{ %Title% [Электронный ресурс]}{ // %InternetSiteTitle%: [сайт].}{ [%Year%].}{ URL: %URL:0s%}{ (дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
+          <format lcid="1033">{%Author:249%.}{ %Title%: [Электронный ресурс]}{ // %InternetSiteTitle%: [сайт].}{ [%Year%].}{ - Режим доступа: URL: &lt;u&gt;&lt;font color="#0563c1"&gt;%URL:0s%&lt;/font&gt;&lt;/u&gt;}{ (Дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
+          <format lcid="1049">{%Author:249%.}{ %Title%: [Электронный ресурс]}{ // %InternetSiteTitle%: [сайт].}{ [%Year%].}{ - Режим доступа: URL: &lt;u&gt;&lt;font color="#0563c1"&gt;%URL:0s%&lt;/font&gt;&lt;/u&gt;}{ (Дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
         </column>
         <sortkey></sortkey>
       </source>
@@ -342,10 +333,10 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
-           <format lcid="1033">{%Author:249%.}{ %Title%}{ // %InternetSiteTitle%.}{ %Year%.}{ URL: %URL:0s%}{ (дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
-           <format lcid="1049">{%Author:249%.}{ %Title%}{ // %InternetSiteTitle%.}{ %Year%.}{ URL: %URL:0s%}{ (дата обращения: %DayAccessed%.%MonthAccessed%.%YearAccessed%).}</format>
+           <format lcid="1033">{ %Title%}{ «%InternetSiteTitle%»}.</format>
+           <format lcid="1049">{ %Title%}{ «%InternetSiteTitle%»}.</format>
         </column>
         <sortkey></sortkey>
       </source>
@@ -356,7 +347,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:249%.}{ %Title%.}{ %City%:}{ %Publisher%,}{ %Year%.}{ %Medium%.}</format>
           <format lcid="1049">{%Author:249%.}{ %Title%.}{ %City%:}{ %Publisher%,}{ %Year%.}{ %Medium%.}</format>
@@ -370,7 +361,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Inventor:233|Author:233%. }{%Title%,}{ %Type%}{ %PatentNumber%}{,{ %Month:s%{ %Day%,}} %Year%}.</format>
           <format lcid="1049">{%Inventor:249|Author:249%. }{%Title%,}{ %Type%}{ %PatentNumber%}{,{ %Month:s%{ %Day%,}} %Year%}.</format>
@@ -384,7 +375,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
 <!--      <format lcid="1033">{%Author:133%, }{%Title%}{,{ %Month:s%{ %Day%,}} %Year%}{, %Comments%}.</format>
           <format lcid="1049">{%Author:149%, }{%Title%}{,{ %Month:s%{ %Day%,}} %Year%}{, %Comments%}.</format> -->
@@ -400,7 +391,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233%. }{%Title%, }{%Institution%, }{%ThesisType% }{%StandardNumber%}{,{ %Month:s%} %Year%}.{ [Online]. %URL:l%}</format>
           <format lcid="1049">{%Author:249%. }{%Title%, }{%Institution%, }{%ThesisType% }{%StandardNumber%}{,{ %Month:s%} %Year%}.{ [Online]. %URL:l%}</format>
@@ -414,7 +405,7 @@
           <format lcid="">{%RefOrder%.}</format>
         </column>
         <column id="2">
-          <halign>left</halign>
+          <halign>justify</halign>
           <valign>top</valign>
           <format lcid="1033">{%Author:233%. }{%Title%, }{%ThesisType%, }{%Institution%, }{%City|StateProvince|CountryRegion%}{, %StateProvince|CountryRegion%}{, %CountryRegion%}{, %Year%}.{ [Online]. %URL:l%}</format>
           <format lcid="1049">{%Author:249%. }{%Title%, }{%ThesisType%, }{%Institution%, }{%City|StateProvince|CountryRegion%}{, %StateProvince|CountryRegion%}{, %CountryRegion%}{, %Year%}.{ [Online]. %URL:l%}</format>
@@ -472,8 +463,8 @@
         <single_prefix></single_prefix>
         <multi_prefix></multi_prefix>
         <corporate>{%Corporate%}</corporate>
-        <first_person>{%Last|First%}{ %First:apu%}{%Middle:apu%}</first_person>
-        <other_persons>{%Last|First%}{ %First:apu%}{%Middle:apu%}</other_persons>
+        <first_person>{ %First% }{ %Middle% }{%Last|First%}</first_person>
+        <other_persons>{ %First% }{ %Middle% }{%Last|First%}</other_persons>
         <separator_between_if_two>, </separator_between_if_two>
         <separator_between_if_more_than_two>, </separator_between_if_more_than_two>
         <separator_before_last>, </separator_before_last>
@@ -487,8 +478,8 @@
         <single_prefix></single_prefix>
         <multi_prefix></multi_prefix>
         <corporate>{%Corporate%}</corporate>
-        <first_person>{%Last|First%}{ %First:apu%}{%Middle:apu%}</first_person>
-        <other_persons>{%Last|First%}{ %First:apu%}{%Middle:apu%}</other_persons>
+        <first_person>{ %First% }{ %Middle% }{%Last|First%}</first_person>
+        <other_persons>{ %First% }{ %Middle% }{%Last|First%}</other_persons>
         <separator_between_if_two>, </separator_between_if_two>
         <separator_between_if_more_than_two>, </separator_between_if_more_than_two>
         <separator_before_last>, </separator_before_last>
