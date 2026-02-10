@@ -293,7 +293,7 @@
         <column id="2">
           <halign>justify</halign>
           <valign>top</valign>
-          <format lcid="1033">{%Author:233%.}{ %Title%}{ // %ConferenceName%.}{ %City|StateProvince|CountryRegion%.}{ %StateProvince|CountryRegion%.}{ %CountryRegion%.}{{ %Month:s%} %Year%.}{ Vol. %Volume%.}{ %Pages:P. :pp. %.}.</format>
+          <format lcid="1033">{%Author:249%.}{ %Title%}{ // %ConferenceName%.}{ %City|StateProvince|CountryRegion%.}{ %StateProvince|CountryRegion%.}{ %CountryRegion%.}{{ %Month:s%} %Year%.}{ Т. %Volume%.}{ С. %Pages%.}.</format>
           <format lcid="1049">{%Author:249%.}{ %Title%}{ // %ConferenceName%.}{ %City|StateProvince|CountryRegion%.}{ %StateProvince|CountryRegion%.}{ %CountryRegion%.}{{ %Month:s%} %Year%.}{ Т. %Volume%.}{ С. %Pages%.}.</format>
         </column>
         <sortkey></sortkey>
